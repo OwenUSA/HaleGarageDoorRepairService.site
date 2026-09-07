@@ -1,0 +1,180 @@
+{
+  "site": "halegaragedoorrepairservice.site",
+  "note": "Real garage-door photography, one unique photo per file. wide = hero/banner, tall = card/gallery, square = spot.",
+  "images": [
+    {
+      "file": "/images/square-01.webp",
+      "kind": "square",
+      "width": 900,
+      "height": 900
+    },
+    {
+      "file": "/images/square-02.webp",
+      "kind": "square",
+      "width": 900,
+      "height": 900
+    },
+    {
+      "file": "/images/square-03.webp",
+      "kind": "square",
+      "width": 900,
+      "height": 900
+    },
+    {
+      "file": "/images/tall-01.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-02.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-03.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-04.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-05.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-06.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-07.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-08.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-09.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-10.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-11.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-12.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-13.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-14.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-15.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/tall-16.webp",
+      "kind": "tall",
+      "width": 750,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-01.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-02.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-03.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-04.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-05.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-06.webp",
+      "kind": "wide",
+      "width": 1333,
+      "height": 1000
+    },
+    {
+      "file": "/images/wide-07.webp",
+      "kind": "wide",
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "file": "/images/wide-08.webp",
+      "kind": "wide",
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "file": "/images/wide-09.webp",
+      "kind": "wide",
+      "width": 1920,
+      "height": 1440
+    },
+    {
+      "file": "/images/wide-10.webp",
+      "kind": "wide",
+      "width": 1920,
+      "height": 1440
+    }
+  ]
+}

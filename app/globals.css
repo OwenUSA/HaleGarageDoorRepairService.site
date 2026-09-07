@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* ============================================================================
+   Desert editorial — Hale Garage Door Repair Service
+   Sand paper, bronze ink, terracotta accent, sage secondary. Warm and dry.
+   Every value below is a literal; nothing in @theme aliases another token.
+   ============================================================================ */
+@theme static {
+  /* ---- palette ---- */
+  --color-sand: #f0e6d8;
+  --color-sand-deep: #e4d5c1;
+  --color-sand-pale: #f8f2e9;
+  --color-bronze: #4a3728;
+  --color-bronze-deep: #33251a;
+  --color-bronze-soft: #6f5844;
+  --color-terracotta: #c4633f;
+  --color-terracotta-deep: #a44e2e;
+  --color-sage: #7d8b74;
+  --color-sage-deep: #5f6c57;
+  --color-line: #d9c9b2;
+  --color-paper: #fbf7f1;
+
+  /* ---- type ---- */
+  --font-display: var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-karla), "Karla", ui-sans-serif, system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.4375rem;
+  --text-2xl: 1.75rem;
+  --text-3xl: 2.125rem;
+  --text-4xl: 2.75rem;
+  --text-5xl: 3.5rem;
+  --text-6xl: 4.25rem;
+
+  /* ---- geometry — 16px radius throughout the design direction ---- */
+  --radius-card: 16px;
+  --radius-chip: 12px;
+  --radius-pill: 999px;
+
+  --container-max: 1180px;
+
+  --shadow-lift: 0 18px 40px -24px rgba(74, 55, 40, 0.45);
+  --shadow-plate: 0 30px 70px -40px rgba(74, 55, 40, 0.6);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-sand);
+  color: var(--color-bronze);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--color-bronze);
+  text-wrap: balance;
+}
+
+p { text-wrap: pretty; }
+
+a { color: inherit; }
+
+:focus-visible {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Editorial eyebrow — small caps label above a display heading. */
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-terracotta);
+}
+
+/* A wide-gutter editorial measure: body copy never runs the full container. */
+.measure { max-width: 62ch; }
+
+/* The banded rule that separates editorial rows. */
+.hairline { border-top: 1px solid var(--color-line); }
+
+/* Native details marker off — the FAQ draws its own chevron. */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }
