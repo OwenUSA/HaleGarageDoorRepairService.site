@@ -19,6 +19,14 @@
   --color-sage-deep: #5f6c57;
   --color-line: #d9c9b2;
   --color-paper: #fbf7f1;
+  /* Light ink for text sitting ON a bronze/terracotta fill. ONE token shared by
+     the header call button, the mobile call bar and the interior page banners,
+     so the three cannot drift apart again. 10.4:1 on bronze, 5.2:1 on
+     terracotta-deep. */
+  --color-ink-inverse: #fbf7f1;
+  /* The only terracotta dark enough to carry small light text at 4.5:1; the
+     bright --color-terracotta reaches only 4.03:1 even against pure white. */
+  --color-terracotta-ink: #a44e2e;
 
   /* ---- type ---- */
   --font-display: var(--font-outfit), "Outfit", ui-sans-serif, system-ui, sans-serif;
@@ -46,55 +54,80 @@
   --shadow-plate: 0 30px 70px -40px rgba(74, 55, 40, 0.6);
 }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%;
+/* ============================================================================
+   BASE — element defaults.
+
+   These MUST live in @layer base. Tailwind puts every utility in
+   @layer utilities, and an UNLAYERED declaration beats a layered one whatever
+   its specificity. When these rules sat outside a layer, `a { color: inherit }`
+   silently defeated `text-*` on every link and `h1 { color: bronze }` defeated
+   it on every heading — which is how the header call button rendered bronze on
+   bronze and the interior banner H1s rendered bronze over a photo. Nothing in
+   this block may move back out of the layer.
+   ============================================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-sand);
+    color: var(--color-bronze);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    color: var(--color-bronze);
+    text-wrap: balance;
+  }
+
+  p { text-wrap: pretty; }
+
+  /* Default only — any `text-*` utility on a link now overrides this. */
+  a { color: inherit; }
+
+  :focus-visible {
+    outline: 3px solid var(--color-bronze);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* On a dark or accent-filled surface the bronze ring disappears; use the
+     light ink instead so the focus ring is visible on both grounds. */
+  .on-accent:focus-visible {
+    outline-color: var(--color-ink-inverse);
+  }
 }
 
-body {
-  background-color: var(--color-sand);
-  color: var(--color-bronze);
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  line-height: 1.65;
-  -webkit-font-smoothing: antialiased;
+/* ============================================================================
+   COMPONENTS — layered so a utility can still win against them.
+   ============================================================================ */
+@layer components {
+  /* Editorial eyebrow — small caps label above a display heading. */
+  .eyebrow {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--text-xs);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-terracotta);
+  }
+
+  /* A wide-gutter editorial measure: body copy never runs the full container. */
+  .measure { max-width: 62ch; }
+
+  /* The banded rule that separates editorial rows. */
+  .hairline { border-top: 1px solid var(--color-line); }
+
+  /* Native details marker off — the FAQ draws its own chevron. */
+  details > summary { list-style: none; cursor: pointer; }
+  details > summary::-webkit-details-marker { display: none; }
 }
-
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: var(--color-bronze);
-  text-wrap: balance;
-}
-
-p { text-wrap: pretty; }
-
-a { color: inherit; }
-
-:focus-visible {
-  outline: 3px solid var(--color-terracotta);
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* Editorial eyebrow — small caps label above a display heading. */
-.eyebrow {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: var(--text-xs);
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-terracotta);
-}
-
-/* A wide-gutter editorial measure: body copy never runs the full container. */
-.measure { max-width: 62ch; }
-
-/* The banded rule that separates editorial rows. */
-.hairline { border-top: 1px solid var(--color-line); }
-
-/* Native details marker off — the FAQ draws its own chevron. */
-details > summary { list-style: none; cursor: pointer; }
-details > summary::-webkit-details-marker { display: none; }

@@ -19,7 +19,7 @@ export default function NotFound() {
             <li key={r.href}>
               <Link
                 href={r.href}
-                className="inline-flex rounded-pill border border-line bg-sand-pale px-5 py-2.5 font-display text-sm font-medium text-bronze hover:border-terracotta hover:text-terracotta"
+                className="inline-flex rounded-pill border border-line bg-sand-pale px-5 py-2.5 font-display text-sm font-medium text-bronze hover:border-terracotta-ink hover:text-terracotta-ink"
               >
                 {r.label}
               </Link>

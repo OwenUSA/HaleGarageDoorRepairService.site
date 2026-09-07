@@ -123,14 +123,28 @@ export function PageBanner({
         width={photo.width}
         height={photo.height}
         decoding="async"
-        className="absolute inset-0 -z-10 h-full w-full object-cover opacity-35"
+        className="absolute inset-0 h-full w-full object-cover opacity-25"
       />
-      <div className="mx-auto max-w-(--container-max) px-5 py-20 lg:px-8 lg:py-28">
-        <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-terracotta">
+      {/* Scrim. The photo alone left the heading on an unpredictable ground — a
+          bright patch of sky behind the text dropped it to ~3.6:1. This bronze
+          wash is fully opaque where the heading starts and never thinner than
+          62%, which floors the heading at 7.8:1 and holds ~10:1 across the
+          measure the H1 actually occupies. */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0"
+        style={{
+          background:
+            'linear-gradient(90deg, var(--color-bronze) 0%, color-mix(in oklab, var(--color-bronze) 90%, transparent) 55%, color-mix(in oklab, var(--color-bronze) 62%, transparent) 100%)',
+        }}
+      />
+      {/* relative, and last in the DOM, so it paints over both layers above. */}
+      <div className="relative mx-auto max-w-(--container-max) px-5 py-20 lg:px-8 lg:py-28">
+        <p className="font-display text-xs font-semibold uppercase tracking-[0.18em] text-sand-deep">
           {eyebrow}
         </p>
-        <h1 className="mt-4 max-w-3xl text-4xl text-sand-pale lg:text-6xl">{title}</h1>
-        <p className="measure mt-6 text-lg leading-relaxed text-sand-deep/90">{lead}</p>
+        <h1 className="mt-4 max-w-3xl text-4xl text-ink-inverse lg:text-6xl">{title}</h1>
+        <p className="measure mt-6 text-lg leading-relaxed text-sand-deep">{lead}</p>
       </div>
     </section>
   );

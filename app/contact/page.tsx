@@ -51,7 +51,7 @@ export default function ContactPage() {
                     Phone
                   </dt>
                   <dd className="mt-1">
-                    <a href={business.phoneHref} className="font-display text-xl font-semibold text-bronze hover:text-terracotta">
+                    <a href={business.phoneHref} className="font-display text-xl font-semibold text-bronze hover:text-terracotta-ink">
                       {business.phone}
                     </a>
                   </dd>
@@ -67,7 +67,7 @@ export default function ContactPage() {
                     Email
                   </dt>
                   <dd className="mt-1">
-                    <a href={business.emailHref} className="break-all text-base text-bronze underline underline-offset-4 hover:text-terracotta">
+                    <a href={business.emailHref} className="break-all text-base text-bronze underline underline-offset-4 hover:text-terracotta-ink">
                       {business.email}
                     </a>
                   </dd>
@@ -85,7 +85,7 @@ export default function ContactPage() {
                   <dd className="mt-1 text-base text-bronze">
                     {business.addressLine}
                     <br />
-                    <a href={directionsHref} className="text-sm underline underline-offset-4 hover:text-terracotta">
+                    <a href={directionsHref} className="text-sm underline underline-offset-4 hover:text-terracotta-ink">
                       Get directions
                     </a>
                   </dd>

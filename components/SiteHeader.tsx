@@ -40,7 +40,7 @@ export default function SiteHeader() {
             <Link
               key={r.href}
               href={r.href}
-              className="font-display text-sm font-medium tracking-wide text-bronze transition-colors hover:text-terracotta"
+              className="font-display text-sm font-medium tracking-wide text-bronze transition-colors hover:text-terracotta-ink"
             >
               {r.label}
             </Link>
@@ -50,7 +50,10 @@ export default function SiteHeader() {
         <div className="flex items-center gap-3">
           <a
             href={business.phoneHref}
-            className="hidden items-center gap-2 rounded-pill bg-bronze px-5 py-3 font-display text-sm font-semibold text-sand-pale transition-colors hover:bg-terracotta lg:flex"
+            // on-accent: light ink on a bronze fill (10.4:1). Hover darkens to
+            // terracotta-ink rather than the bright terracotta, which cannot
+            // carry 14px text at 4.5:1 against any light ink.
+            className="on-accent hidden items-center gap-2 rounded-pill bg-bronze px-5 py-3 font-display text-sm font-semibold text-ink-inverse transition-colors hover:bg-terracotta-ink hover:text-ink-inverse lg:flex"
           >
             <Phone size={16} aria-hidden="true" />
             {business.phone}
@@ -83,7 +86,7 @@ export default function SiteHeader() {
           ))}
           <a
             href={business.phoneHref}
-            className="mt-4 flex items-center justify-center gap-2 rounded-pill bg-terracotta px-5 py-3.5 font-display text-sm font-semibold text-sand-pale"
+            className="on-accent mt-4 flex items-center justify-center gap-2 rounded-pill bg-terracotta-ink px-5 py-3.5 font-display text-sm font-semibold text-ink-inverse"
           >
             <Phone size={16} aria-hidden="true" />
             Call {business.phone}

@@ -27,7 +27,7 @@ export default function SiteFooter() {
             Site
           </span>
           {ROUTES.map((r) => (
-            <Link key={r.href} href={r.href} className="flex min-h-10 items-center text-sm hover:text-terracotta">
+            <Link key={r.href} href={r.href} className="flex min-h-10 items-center text-sm hover:text-ink-inverse hover:underline">
               {r.label}
             </Link>
           ))}
@@ -41,7 +41,7 @@ export default function SiteFooter() {
             <Phone size={16} aria-hidden="true" />
             {business.phone}
           </a>
-          <a href={business.emailHref} className="flex items-start gap-2 break-all text-sm hover:text-terracotta">
+          <a href={business.emailHref} className="flex items-start gap-2 break-all text-sm hover:text-ink-inverse hover:underline">
             <Mail size={16} aria-hidden="true" className="mt-1 shrink-0" />
             {business.email}
           </a>
@@ -51,7 +51,7 @@ export default function SiteFooter() {
           </span>
           <a
             href={directionsHref}
-            className="flex min-h-10 items-center text-sm underline underline-offset-4 hover:text-terracotta"
+            className="flex min-h-10 items-center text-sm underline underline-offset-4 hover:text-ink-inverse"
           >
             Get directions
           </a>
