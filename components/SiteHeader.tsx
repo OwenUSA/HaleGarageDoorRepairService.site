@@ -3,6 +3,7 @@
 // SiteHeader — nav reads lib/routes.ts, so an entry here cannot drift from a real route.
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 import { ROUTES } from '@/lib/routes';
 import { business } from '@/lib/business';
@@ -21,12 +22,18 @@ export default function SiteHeader() {
 
       <div className="mx-auto flex h-[76px] max-w-(--container-max) items-center justify-between gap-6 px-5 lg:h-[92px] lg:px-8">
         <Link href="/" className="flex min-h-11 shrink-0 items-center gap-3" aria-label={business.name}>
-          <span
+          {/* The sun mark lifted off hale-logo.jpg. Only the mark, not the full
+              lockup: the lockup's tagline is illegible mush at header height, and
+              the wordmark beside it already says the name. */}
+          <Image
+            src="/images/hale-mark.png"
+            alt=""
             aria-hidden="true"
-            className="grid h-10 w-10 place-items-center rounded-chip bg-terracotta font-display text-lg font-bold text-sand-pale"
-          >
-            H
-          </span>
+            width={386}
+            height={213}
+            priority
+            className="h-auto w-[46px] shrink-0"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-display text-lg font-bold tracking-tight text-bronze lg:text-xl">Hale</span>
             <span className="mt-1 font-display text-[10px] font-medium uppercase tracking-[0.2em] text-bronze-soft">
